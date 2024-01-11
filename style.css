@@ -1,0 +1,165 @@
+@font-face {
+  font-family: Evander;
+  src: url('/fonts/Evander-ExtraBold.otf');
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppings', sans-serif;
+    box-sizing: border-box;
+}
+
+.container{
+    position: absolute;
+    width: 100%;
+    min-height: 100vh;
+    background-image: url("/images/desert-bg.jpg");
+    background-size: cover;
+}
+
+.todo-app{
+  
+    width: 100%;
+    max-width: 540px;
+    margin: 300px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+    /* glassmorphism */
+    backdrop-filter: blur(11px);
+    --webkit-backdrop-filter: blur(11px);
+    --moz-backdrop-filter: blur(11px);
+    background-color: rgba(255, 255, 255, 0.1);
+
+    -webkit-box-shadow:0px 0px 2px 1px rgba(180,180,180,0.3);
+    -moz-box-shadow: 0px 0px 2px 1px rgba(180,180,180,0.3);
+    box-shadow: 0px 0px 2px 1px rgba(180,180,180,0.3);
+    
+    transition: all 0.5s ease;
+}
+.todo-app h2{
+    font-family: "Evander";
+    color: #fff6f1;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-left: 12px;
+}
+
+.todo-app img{
+    width: 30px;
+    margin-left: 10px;
+}
+
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+
+    backdrop-filter: blur(20px);
+    --webkit-backdrop-filter: blur(20px);
+    --moz-backdrop-filter: blur(20px);
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+input{
+    color: #555;
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+}
+button{
+    font-family: "Evander";
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    /* background-color: #CA8560; */
+    background-image: url("images/button-2.png");
+    background-size: cover;
+    background-position: center center;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 40px;
+}
+
+ul li{
+  overflow: hidden;
+  word-wrap: break-word;
+  position: relative;
+  list-style: none;
+  font-size: 17px;
+  padding: 12px;
+  user-select: none;
+  cursor: pointer;
+}
+
+
+@keyframes check {
+
+  
+  
+}
+
+ul li span{
+  position: absolute;
+  right: 0;
+  top: 5px;
+  width: 40px;
+  height: 40px;
+  font-size: 22px;
+  color: #555;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50px;
+  transition: 0.2s;
+  transition-timing-function: cubic-bezier(.5,0,.5,1);
+}
+
+
+ul li span::before{
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0px;
+  border-radius: 50px;
+  width: 40px;
+  height: 40px;
+  transition: 0.5s;
+  transition-timing-function: cubic-bezier(.5,0,.5,1);
+}
+ul li span:hover::before{
+  background-color: #CA856044;
+  border-radius: 10px 30px;
+  animation: spin 1s infinite;
+  animation-timing-function: linear;
+}
+
+
+@keyframes spin {
+
+  to{rotate: 360deg;}
+  
+}
+
+ul li p{
+  padding: 0px 4px;
+  width: fit-content;
+  pointer-events: none;  
+  color: #C6C3C3;
+  background-image: linear-gradient(90deg,#555, #555);
+  background-size: 0% 2px;
+  background-repeat: no-repeat;
+  background-position: left 0.45lh;
+  transition: background-size 700ms, color 700ms;
+  transition-timing-function: cubic-bezier(.9,0,.1,1);
+}
+ul li.checked p{
+  color: #555;
+  background-size: 100% 2px;
+}
