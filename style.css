@@ -99,13 +99,6 @@ ul li{
   cursor: pointer;
 }
 
-
-@keyframes check {
-
-  
-  
-}
-
 ul li span{
   position: absolute;
   right: 0;
