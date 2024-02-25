@@ -1,6 +1,6 @@
 @font-face {
   font-family: Evander;
-  src: url('/fonts/Evander-ExtraBold.otf');
+  src: url('fonts/Evander-ExtraBold.otf');
 }
 
 *{
@@ -14,7 +14,7 @@
     position: absolute;
     width: 100%;
     min-height: 100vh;
-    background-image: url("/images/desert-bg.jpg");
+    background-image: url("images/desert-bg.jpg");
     background-size: cover;
 }
 
@@ -26,6 +26,7 @@
     padding: 40px 30px 70px;
     border-radius: 10px;
     /* glassmorphism */
+    -webkit-backdrop-filter: blur(11px);
     backdrop-filter: blur(11px);
     --webkit-backdrop-filter: blur(11px);
     --moz-backdrop-filter: blur(11px);
@@ -58,7 +59,7 @@
     border-radius: 30px;
     padding-left: 20px;
     margin-bottom: 25px;
-
+    -webkit-backdrop-filter: blur(11px);
     backdrop-filter: blur(20px);
     --webkit-backdrop-filter: blur(20px);
     --moz-backdrop-filter: blur(20px);
@@ -95,6 +96,7 @@ ul li{
   list-style: none;
   font-size: 17px;
   padding: 12px;
+  -webkit-user-select: none;
   user-select: none;
   cursor: pointer;
 }
@@ -136,12 +138,16 @@ ul li span:hover::before{
 
 @keyframes spin {
 
-  to{rotate: 360deg;}
+  to{
+    transform: rotate(360deg);
+    /* rotate: 360deg; */
+  }
   
 }
 
 ul li p{
   padding: 0px 4px;
+  width: -moz-fit-content;
   width: fit-content;
   pointer-events: none;  
   color: #C6C3C3;
